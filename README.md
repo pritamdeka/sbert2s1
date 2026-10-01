@@ -96,7 +96,9 @@ See [`research/README.md`](research/README.md). In short:
 cd research
 pip install -r requirements.txt
 python data_build/build_public.py --out prepared     # downloads and converts the public tasks
-python data_build/build_medline.py --out prepared    # MEDLINE-S1 from the NLM baseline files
+huggingface-cli download pritamdeka/MEDLINE-S1 --repo-type dataset --local-dir medline_s1_release
+python data_build/hydrate_medline.py --data medline_s1_release/data --out prepared/medline_s1   # adds the abstracts
+python data_build/verify_build.py                    # compares your build with the paper's, record by record
 python tests/test_cpu.py                             # end-to-end CPU test
 python experiments.py list                           # every run in the paper
 python experiments.py run --group rq3c               # run a group locally (or: commands, for any scheduler)
@@ -115,7 +117,11 @@ the PhysioNet data use agreements, never send these data to hosted models or API
 * Code: Apache License 2.0 (see `LICENSE` and `NOTICE`).
 * Released model weights: CC BY-NC 2.0, inherited from
   [S-PubMedBert-MS-MARCO](https://huggingface.co/pritamdeka/S-PubMedBert-MS-MARCO).
-* Datasets are not redistributed and keep their own licences.
+* MEDLINE-S1 questions, labels and splits: CC BY 4.0, on the Hugging Face Hub as
+  [pritamdeka/MEDLINE-S1](https://huggingface.co/datasets/pritamdeka/MEDLINE-S1), without the abstract
+  text (which `hydrate_medline.py` fetches from PubMed).
+* The BioDecide source datasets are not redistributed and keep their own licences. The builders
+  download them, and `research/docs/` holds the hashes needed to check a build against the paper's.
 
 The model is not a medical device. It is not validated for clinical decisions.
 

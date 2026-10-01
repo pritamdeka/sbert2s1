@@ -15,6 +15,10 @@ Questions per abstract (only those whose label is defined are asked):
 Only citations whose MeSH indexing is not purely automated (IndexingMethod Manual or Curated) from
 2005-2021 are used; PMIDs in any
 BioDecide dev/test set (prepared/eval_pmids.json) are excluded. Train and test come from disjoint files.
+
+NLM replaces the baseline every year, so this script builds the paper's set only from the 2026 baseline.
+To get the paper's set, download the release from the Hugging Face Hub (pritamdeka/MEDLINE-S1) and run
+data_build/hydrate_medline.py.
 """
 import argparse
 import gzip

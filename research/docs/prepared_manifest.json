@@ -6,6 +6,7 @@
    "true": 88
   },
   "sha256": "526efeae2f3bd7eb2c032edc74bb9788c693015b9b0723faa9cd7e906b34647d",
+  "sha256_lf": "862d4b318be42e76ccee022fa3db7119e886179ed62d681c70b834e63d8c83b0",
   "states": 400
  },
  "ade/dev": {
@@ -15,6 +16,7 @@
    "true": 439
   },
   "sha256": "1aea5e9bdbe3f1d99f3f0bdb030339782515ef6875d07bd34373e601e97b3087",
+  "sha256_lf": "85e88b159dc62f9affb9c06ec56105acec00d7bf1f0a322489a442676220784d",
   "states": 2089
  },
  "ade/test": {
@@ -24,6 +26,7 @@
    "true": 408
   },
   "sha256": "f9306ef0965fad634da6cd5153cea0b37bb615bc23579c27662ad8a77cf308e2",
+  "sha256_lf": "1d80c21716194e7558c25fa1a08c4e971301f1674ec7a5baff55c9f007e7b498",
   "states": 2089
  },
  "ade/train": {
@@ -33,6 +36,7 @@
    "true": 3336
   },
   "sha256": "b43d53f5501650b0f4e0706ffcd3340dbdae801ce2e966abaf7d45ac7c7c2651",
+  "sha256_lf": "7ab74643386f95ebba5dd741af6170b167e3f158f3c4a385dc306606aae4a05c",
   "states": 16318
  },
  "biosses/test": {
@@ -45,6 +49,7 @@
    "4": 11
   },
   "sha256": "57dc20f7dacd331dc8311f0a52f1d7f5f95740aadbe3205a2b176d3311f5bec1",
+  "sha256_lf": "83f633241a88561312e482b1eef94d5f4311197169691dd5e2fee225327d5569",
   "states": 100
  },
  "ddi/calib": {
@@ -56,6 +61,7 @@
    "none": 342
   },
   "sha256": "5341d846c568ee6130259b3af4ffd131c73c41feb101e5fa5ec10aebd133cd50",
+  "sha256_lf": "564bde8ea907696912bc8c915e2ae79d684d05d618ca3ed3277126b076a71697",
   "states": 400
  },
  "ddi/test": {
@@ -68,6 +74,7 @@
    "none": 6073
   },
   "sha256": "9b69a7e0101a7d1e699174947adaa42b47955b038b7e4b289a43126770a81b71",
+  "sha256_lf": "3a0c6561ae056464fb29305cdb44591fd3404d3570e3e8df8e1b3d4d23d76a26",
   "states": 7039
  },
  "ddi/train": {
@@ -80,6 +87,7 @@
    "none": 15500
   },
   "sha256": "c935ff6e5a070fa366d310c7b10292f9e552f3c5fcb3c49e8e923901e5b9a1a2",
+  "sha256_lf": "b0e03e162513958c319d01f74f686aa6d3e9d537a6da50e1c5216897d30bce97",
   "states": 18379
  },
  "druglib/calib": {
@@ -92,6 +100,7 @@
    "4": 268
   },
   "sha256": "f62f7c86e65a2e31d2f3d634afd14c42289f45e052fde87cfd2b0db58c8336ed",
+  "sha256_lf": "bcca47d5798d02fe73bef1252410b833011f0d422302b8f048e3bd941d4551b4",
   "states": 310
  },
  "druglib/test": {
@@ -104,6 +113,7 @@
    "4": 850
   },
   "sha256": "df268d595c147bb94be1aae805550ad595dc9303b481bc71728b6ee5a52c0182",
+  "sha256_lf": "5599c54a19febe4ada88b8ade38e11162650b5f8868f4ef11f304b5ea72ef912",
   "states": 1036
  },
  "druglib/train": {
@@ -116,6 +126,7 @@
    "4": 2459
   },
   "sha256": "f2853271f6006f49cb3b1105db7dd279542d3cd6effcdc318ec1f791c90d3293",
+  "sha256_lf": "534bf78c85130171734429ff76d400db3eb5b5693960c123054c6d170f37ad60",
   "states": 2797
  },
  "healthver/calib": {
@@ -126,6 +137,7 @@
    "supports": 193
   },
   "sha256": "90a5e561729111ae2725da6e587ee19b12a2e815d70785f1e4cccce03e94659c",
+  "sha256_lf": "6ec3686d1fbb4e4f03e53d2452cd44d18a89a44a857cb0fb2c78ca6abdd9b1eb",
   "states": 517
  },
  "healthver/dev": {
@@ -136,6 +148,7 @@
    "supports": 533
   },
   "sha256": "c5b5d53a52e878a3f2491cbc52945c8590b16ed15c3cfef3409655973b2934ee",
+  "sha256_lf": "7848d2b0c1f650a67d4a222eeee866d40ccf54b174283552ab7865072b930ac4",
   "states": 1917
  },
  "healthver/test": {
@@ -146,6 +159,7 @@
    "supports": 671
   },
   "sha256": "da0f155e3eb88c6b9512c371de2b8c541b61ada0c5aa8bbff267d9798596a9a8",
+  "sha256_lf": "93556b4039e6a4c23994e6de955dc7593d3b0bc5f192196ab9d3b309aafd6191",
   "states": 1823
  },
  "healthver/train": {
@@ -156,6 +170,7 @@
    "supports": 3589
   },
   "sha256": "d712a3a2603c533e133990723d1454c2cac87fa62f2241524a5de5ff39d444c1",
+  "sha256_lf": "46f578f350c05d5e7633e5ac21f91bc2b461421c93821a43a8dcccb728198bb2",
   "states": 10073
  },
  "hoc/calib": {
@@ -165,6 +180,7 @@
    "true": 155
   },
   "sha256": "0aec08085d98d00fc3c39364d14e7586c738a97283709aa6d684429732af1936",
+  "sha256_lf": "075c25452e90a6a6aad50ca57cdc02d56f3c8e49320f5f2df366cae6de67a1d5",
   "states": 129
  },
  "hoc/dev": {
@@ -174,6 +190,7 @@
    "true": 244
   },
   "sha256": "a0bf7b939596b5a69dcc89162621a2e61048c17a6cff41cde9594812d5ff4239",
+  "sha256_lf": "5c27a5ea488edcac278699ec8b90931b2a84a72bf7ad204105ef24572bdfaaff",
   "states": 186
  },
  "hoc/test": {
@@ -183,6 +200,7 @@
    "true": 484
   },
   "sha256": "d50694e4790b245ed7ddc4042e95c7eccc3607c7f69f6afe8fb495a3df1f6659",
+  "sha256_lf": "8fe0119360659c074c06244bfe02c834fc4169624eea1ea415eed37bdfee1a5a",
   "states": 371
  },
  "hoc/train": {
@@ -192,6 +210,7 @@
    "true": 1583
   },
   "sha256": "94689e6669470404f858891010229d02af53088476ed243ed6e9d27bd8d7bdee",
+  "sha256_lf": "52ad2d4728c04e627ae3a3b00d686da9988c8af3e9b85db6e7ed67fcf79ff2d4",
   "states": 1166
  },
  "medline_s1/calib": {
@@ -229,6 +248,7 @@
    "humans": 400
   },
   "sha256": "af22e53f5865397b4a19ca58184a81dc64e2e37b657f5702fa9860a138a67cae",
+  "sha256_lf": "2462a8a54927cb4ac4eec3c181cda71032910d3ff66bdcb22b4920be73c2c918",
   "states": 400
  },
  "medline_s1/dev": {
@@ -266,6 +286,7 @@
    "humans": 2000
   },
   "sha256": "01ab1d3e069beafb2896ee7e7a66e8fce1de439bd4873c27e1a0fc58091bf22c",
+  "sha256_lf": "442c9cbc9b577e70357310cc98c52f0f375da5adfd27300f41ea0aa0ab96fc65",
   "states": 2000
  },
  "medline_s1/test": {
@@ -292,6 +313,7 @@
    "humans": 5000
   },
   "sha256": "e0e2e505ea1cbe5a33086515b6e3d7b7171205187c5f86b91a21eb2fd6986f55",
+  "sha256_lf": "1718b466700a860ab702ccd04542c8ebc0ba92dd2bfb7b0036d68cd5e86f94d1",
   "states": 5000
  },
  "medline_s1/train": {
@@ -329,6 +351,7 @@
    "humans": 40000
   },
   "sha256": "6a74e9e00e6bda8f7f2d39f21d43881b14312c598dd7476045faa43c20282979",
+  "sha256_lf": "b035a2f7b5da574d67d0fc3b093fedf4f9a17dc5e051f776bf800ee2f5705e4e",
   "states": 40000
  },
  "medmcqa/calib": {
@@ -340,6 +363,7 @@
    "D": 67
   },
   "sha256": "56f5573ede5cde40592909e6567fa34186b6082b9fb77970d819be02b4f74853",
+  "sha256_lf": "e9acbe54951c2f4d34dda156d02cd1474b998ebb7c70ad56701c9db098786e55",
   "states": 400
  },
  "medmcqa/test": {
@@ -351,6 +375,7 @@
    "D": 514
   },
   "sha256": "3232417a1e5833961b3fcac333b177b678940fc91d1404aac7520422337e9755",
+  "sha256_lf": "307611b5162dcd459c84faedde53606f1e20ffafff768726976b6e24e87af963",
   "states": 2816
  },
  "medmcqa/train": {
@@ -362,6 +387,7 @@
    "D": 3657
   },
   "sha256": "a38c8597cb29bc51c948761d8e2468ea22f05a92d4f9c0efc61036748e3a9fc8",
+  "sha256_lf": "a91f9e94d4f3467ba527e2a42476328749eaa730060738634890046cbf9a1ad2",
   "states": 20000
  },
  "medqa/calib": {
@@ -373,6 +399,7 @@
    "D": 103
   },
   "sha256": "4455b371e9fa3d3bc993b8d5f3956017e5aba166267c40fb7190dff69a64ba65",
+  "sha256_lf": "8ee2571dc0e5815cfcb82220d4bef59314aa47c9b2c12a739b7373cfaa002550",
   "states": 400
  },
  "medqa/test": {
@@ -384,6 +411,7 @@
    "D": 265
   },
   "sha256": "2c7caa191c40bb26aa9b08b472e05f09704aaf40eebc40e71e3299c03003c8ae",
+  "sha256_lf": "351273bb21c6f8bde9cbcd7d96a98ee3508b42c5b6d4389712fa1fc817c9f43e",
   "states": 1273
  },
  "medqa/train": {
@@ -395,6 +423,7 @@
    "D": 2280
   },
   "sha256": "76d4f9bee29f834e4a5963e05ada14d97408274d6d989dcf36e0fe8b9d88a65c",
+  "sha256_lf": "00f6c1d509f8bb6dc54357a5ec3b3970d4e8c6cf84c2b7f185a06f9e308efddd",
   "states": 9778
  },
  "mmlu_med/test": {
@@ -406,6 +435,7 @@
    "D": 352
   },
   "sha256": "c300d82d7a5c19aca5177fc7b7f0695002779c135f4532c90189a0099f94e707",
+  "sha256_lf": "39a138521564265f68ff04db6dc9cbe3ad78a6fc7b522636a670dc4362088bc7",
   "states": 1089
  },
  "mtsamples/test": {
@@ -425,6 +455,7 @@
    "Psychiatry / Psychology": 9
   },
   "sha256": "7703e116293071498714e73662c5d7a1f97cad74f712d410619babac69fb40de",
+  "sha256_lf": "116b5b2ef4350f56c995eb4c34442e13bf2106911532b86b18bdccaa4fa9dfa2",
   "states": 370
  },
  "pubhealth/test": {
@@ -436,6 +467,7 @@
    "unproven": 45
   },
   "sha256": "b5a027f5de4ec721453a25e12b2487fc48a573c6fdef4e072b4b1757a1532655",
+  "sha256_lf": "3527a9a9ea496f6fb9cd4650a64f83ad73de9b8e01fae6c317f2ebbd122560e4",
   "states": 1231
  },
  "pubmedqa/calib": {
@@ -446,6 +478,7 @@
    "yes": 27
   },
   "sha256": "705e69d45c060b3261a8a87c32c753b6c1a7a02915cd32a055c390b0096b8123",
+  "sha256_lf": "b27f14b2cb462047e3e4dd2434c59d4fc4f81bc547db636bf0cd301579e360db",
   "states": 50
  },
  "pubmedqa/dev": {
@@ -456,6 +489,7 @@
    "yes": 28
   },
   "sha256": "cee2857ea330a12b5d4f1a3fd94b740baf3bca535cd0b2ca4e674e0c81f1a212",
+  "sha256_lf": "998bd09a925ebd3c4a72551fdd8ce1eba7e43d9bca3781e10ee678f713d95283",
   "states": 50
  },
  "pubmedqa/test": {
@@ -466,6 +500,7 @@
    "yes": 288
   },
   "sha256": "d8fe691654a9301f1e48edf7282956a253309c38949e3ebb3f60b9ae84572a20",
+  "sha256_lf": "ba71d0156ec3f5189d0ed97e6752c5c6815301440b15b64196dd154ef4653733",
   "states": 500
  },
  "pubmedqa/train": {
@@ -476,6 +511,7 @@
    "yes": 209
   },
   "sha256": "fcdf904cd57fd7936bb38b78f4e4a609f25d70260efb2545e5671b5d60afd769",
+  "sha256_lf": "22d8c3fa78bc93e84bec8f9d8160967992c997d97417d70f02cfe7d09c2ce652",
   "states": 400
  },
  "pubmedqa_art/calib": {
@@ -485,6 +521,7 @@
    "true": 377
   },
   "sha256": "248c51c5ac80b4c618f9b147f7061dbee633792874bde2bf531d5555081123cb",
+  "sha256_lf": "e599d3d97e34308e2fa3405d9cde6c90a562f233826e5a9353c70539c162ffdd",
   "states": 400
  },
  "pubmedqa_art/train": {
@@ -494,6 +531,7 @@
    "true": 18614
   },
   "sha256": "c101679e0e9eb46560e7be91fa050dfa14afad90b358bb34d0e692478a3bffb5",
+  "sha256_lf": "42af5e425baacb61eb207ca492a728fb23aff9e1a0b2b38950c556171b1fdbc2",
   "states": 20000
  },
  "scifact/calib": {
@@ -504,6 +542,7 @@
    "supports": 25
   },
   "sha256": "c48d84d031a3c6d79012585ceac130332834786b699474c8c6b23665442b0c3c",
+  "sha256_lf": "961fa49c6777ef2bc145022bd58462403e4b8670071946b6241a84662f9acb7d",
   "states": 88
  },
  "scifact/test": {
@@ -514,6 +553,7 @@
    "supports": 138
   },
   "sha256": "c9fb77b4393816de3aa9d43994def812f29c0cb0fb428abf1463bf23c441f24a",
+  "sha256_lf": "d7cec6247bf5fe7ea9f915fe83971d21604f4421afc0d2f8a680455814d75610",
   "states": 321
  },
  "scifact/train": {
@@ -524,6 +564,7 @@
    "supports": 345
   },
   "sha256": "4fc8ce5aa064f8cf9250d888949cff95b07e71ef07248643e39790bffc87acf8",
+  "sha256_lf": "f3b124dc12b4adf70198542502ac23e0967ac62ccf09f46151e2caac9516a259",
   "states": 780
  },
  "typed_decisions/test": {
@@ -543,6 +584,7 @@
    "true": 296
   },
   "sha256": "ed62cae917dfaf0be27a5fbfe1d84964790d184d2a4ccb79b3cc3f6a9e33a2b9",
+  "sha256_lf": "c1694f273f81fe26b4b0e30a3ac0be87873642d37631b8da647866ccd2b5d508",
   "states": 400
  }
 }

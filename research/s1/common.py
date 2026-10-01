@@ -47,7 +47,7 @@ def write_jsonl(path, rows):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + f'.tmp{os.getpid()}')
-    with open(tmp, 'w', encoding='utf-8') as f:
+    with open(tmp, 'w', encoding='utf-8', newline='\n') as f:   # same bytes on every OS
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + '\n')
     os.replace(tmp, path)
