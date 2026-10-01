@@ -7,7 +7,7 @@
                 reproducibility. NOTE: the same-sample mean baseline scales the expected gradient by (G-1)/G
                 and the batch-wide std normalisation rescales it again, so this is NOT an unbiased
                 estimator of the smoothed-score gradient.
-  rlcd_pg_loo   patch 8: REINFORCE with a leave-one-out baseline and no std normalisation. Unbiased for the
+  rlcd_pg_loo   REINFORCE with a leave-one-out baseline and no std normalisation. Unbiased for the
                 gradient of the noise-smoothed score, on the same scale as rlcd_reparam (matched control).
   rlcd_reparam  the same noise-smoothed proper score, differentiated pathwise (reparameterisation)
                 instead of by REINFORCE; plus w_ce * ce

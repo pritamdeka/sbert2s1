@@ -7,7 +7,7 @@ import numpy as np
 import torch
 
 from .common import QTYPE_NAMES, temp_bucket
-from .temperature_lookup import temperature_for  # noqa: F401  (re-exported; patch 8)
+from .temperature_lookup import temperature_for  # noqa: F401  (re-exported)
 
 MIN_ITEMS = 10
 T_MIN, T_MAX = 0.05, 20.0

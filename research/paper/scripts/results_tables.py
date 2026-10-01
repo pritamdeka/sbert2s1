@@ -4,6 +4,7 @@ Aggregation: per run, average the chance-normalised accuracy over the question g
 then over the tasks of a track; report mean +- sd over seeds.
 """
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -260,8 +261,10 @@ def write_all(runs_dir, out_dir):
     print('wrote main_results.tex, zeroshot.tex, rlcd.tex')
 
 
+GPU_NAME = os.environ.get('S1_GPU_NAME', 'GPU')
+
 def efficiency_table(df, runs_dir):
-    """Retrieval retention (S-PubMedBERT-based models, seed 0) and batch-1 latency on MI300X."""
+    """Retrieval retention (S-PubMedBERT-based models, seed 0) and batch-1 latency on one GPU (name: S1_GPU_NAME)."""
     ret = df[df.task.astype(str).str.startswith('ret_')]
     lat = json.loads((Path(runs_dir) / 'latency' / 'latency_cuda.json').read_text())['results']
 
@@ -294,7 +297,7 @@ Model (S-PubMedBERT) & SciFact & NFCorpus & ms \\
 \bottomrule
 \end{{tabular}}
 \caption{{Retrieval retention of the pooled embedding after conversion (seed 0), and p50 latency of one
-request with 10 questions at batch size 1 on an MI300X (base-encoder latencies measured on the
+request with 10 questions at batch size 1 on one {GPU_NAME} (base-encoder latencies measured on the
 PubMedBERT architecture, which S-PubMedBERT shares). Times cover the model forward pass only, excluding tokenisation and host/device transfers.}}
 \label{{tab:eff}}
 \end{{table}}

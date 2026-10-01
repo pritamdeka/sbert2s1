@@ -14,8 +14,8 @@ This repository contains
   with the released model.
 * **`research/`**: the code used for the paper. It covers the four conversions (Z, B, C, PFR), the
   training objectives (CE, proper scores, RLCD and an unbiased leave-one-out variant), temperature
-  fitting, the BioDecide and MEDLINE-S1 data builders, the SLURM campaign scripts, and the analysis
-  and table and figure scripts.
+  fitting, the BioDecide and MEDLINE-S1 data builders, an experiment runner that works on any single
+  GPU or scheduler, and the analysis and table and figure scripts.
 
 The released model is [`pritamdeka/S1-PubMedBERT`](https://huggingface.co/pritamdeka/S1-PubMedBERT).
 
@@ -76,8 +76,9 @@ On **BioDecide** (eleven public biomedical tasks plus a credentialed clinical tr
 **MEDLINE-S1** (243k decisions derived from NLM indexing), across eleven base-size encoders:
 
 * Retrieval training gives useful **zero-shot** matching of content-bearing options. After
-  fine-tuning, its effect depends on the conversion: neutral for the cross head (C), positive in three
-  of five pairs for the prior-fused residual head (PFR).
+  fine-tuning, its effect depends on the conversion: across five parent-retriever pairs and three data
+  sizes it helps the prior-fused residual head (PFR) in 10 of 15 comparisons, most with little labelled
+  data, but helps the cross head (C) in one and hurts it in five.
 * The **cross head is the strongest conversion** under every training objective; PFR is almost
   invariant to option order.
 * **Cross-entropy plus temperature scaling matches or beats the released RLCD recipe.** RLCD's
@@ -97,10 +98,11 @@ pip install -r requirements.txt
 python data_build/build_public.py --out prepared     # downloads and converts the public tasks
 python data_build/build_medline.py --out prepared    # MEDLINE-S1 from the NLM baseline files
 python tests/test_cpu.py                             # end-to-end CPU test
+python experiments.py list                           # every run in the paper
+python experiments.py run --group rq3c               # run a group locally (or: commands, for any scheduler)
 ```
 
-The campaign itself (about 40 GPU-hours on AMD MI300X for the main grid) is a packed SLURM queue (`scripts/submit.sh`,
-`slurm/worker.slurm`). The aggregate metrics of every run behind the paper are in
+Every encoder experiment fits on one GPU. The aggregate metrics of every run behind the paper are in
 `research/results/metrics_long.csv.gz`.
 
 **Credentialed data.** The clinical track uses MedNLI, MIMIC-III and MIMIC-IV derivatives from

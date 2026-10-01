@@ -1,7 +1,7 @@
 """Tables and figures added in the final revision (head x objective grid, matched gradient probe,
 optimisation traces, calibration diagrams, per-task results, complete contrast tables).
 
-    python paper/scripts/revision_tables.py results/s1_results_public/runs
+    python paper/scripts/revision_tables.py runs
 Inputs: metrics_long.csv (collect.py), analysis/contrasts.json (bootstrap.py), runs/*/train_log.jsonl,
 runs/probe/gradvar/grad_probe.json and saved public-task predictions.
 """
@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 V2 = HERE.parents[1]
 TAB, FIG = HERE.parent / 'tables', HERE.parent / 'figures'
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(V2 / 's1bio_hpc'))
+sys.path.insert(0, str(V2))
 from results_tables import cell, load, per_run_track  # noqa: E402
 
 SEEN = ['pubmedqa', 'scifact', 'healthver', 'ddi', 'hoc', 'ade', 'druglib', 'medline_s1']
@@ -388,7 +388,7 @@ Contrast ($a - b$) & Seeds & Seen $\Delta$ [95\% CI] & $p_{\text{Holm}}$ & Held-
 
 
 def main():
-    runs_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else V2 / 'results' / 's1_results_public' / 'runs'
+    runs_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else V2 / 'runs'
     df = load()
     objectives_tables(df, runs_dir)
     probe_outputs(runs_dir)

@@ -1,6 +1,6 @@
 """Download and convert every public BioDecide task into the typed-decision record format.
 
-Run on a machine with internet (the authors' workstation), then upload `prepared/`:
+Needs internet access (Hugging Face Hub and the original dataset hosts):
     python data_build/build_public.py --out prepared
 Each task gets prepared/<task>/{train,calib,dev,test}.jsonl (only the splits it has). `calib` is carved
 from train before any training and is used only for temperature fitting. Test files are hashed into

@@ -1,5 +1,5 @@
-"""Convert the PhysioNet credentialed datasets into typed-decision records. RUN ONLY ON KELVIN2 (or the
-licensee's own machine). Prints counts only, never record text. Output directories are chmod 700.
+"""Convert the PhysioNet credentialed datasets into typed-decision records. Run it only on infrastructure that
+your PhysioNet data use agreement allows. Prints counts only, never record text. Output directories are chmod 700.
 
     python data_build/build_clinical.py --src /path/to/databases --out prepared
 

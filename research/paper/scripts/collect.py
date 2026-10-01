@@ -1,6 +1,6 @@
 """Flatten every run's metrics into one CSV (one row per run x eval split x question group).
 
-    python paper/scripts/collect.py results/s1_results_public   ->  paper/scripts/metrics_long.csv
+    python paper/scripts/collect.py .   ->  paper/scripts/metrics_long.csv
 """
 import json
 import sys

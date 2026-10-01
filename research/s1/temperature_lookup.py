@@ -1,4 +1,4 @@
-"""Temperature lookup shared by evaluation, prediction and offline analysis (patch 8).
+"""Temperature lookup shared by evaluation, prediction and offline analysis.
 
 Fixes two problems of the earlier lookups:
   * offline analysis matched buckets by option count only and ignored the question type;

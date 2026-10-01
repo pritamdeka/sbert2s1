@@ -1,8 +1,8 @@
 """Pinned model specs: configs/models.json + configs/models.lock.json -> local snapshot paths.
 
-`python -m s1.models_io --stage slug ...` runs on a network-enabled node: it
-records the Hub commit SHA in the lock before downloading, so compute jobs (HF offline) load
-exactly that commit.
+Models are downloaded from the Hugging Face Hub on first use. Optionally, `python -m s1.models_io --stage slug ...`
+records the Hub commit SHA in configs/models.lock.json before downloading, so later (possibly offline) runs
+load exactly that commit.
 """
 import argparse
 import os

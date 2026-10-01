@@ -5,7 +5,7 @@ accuracy averaged over (task, question, K) groups within a task, then over tasks
 with replacement within each task (all questions of a state move together), identically for both sides
 of a contrast.
 
-    python paper/scripts/bootstrap.py results/s1_results_public/runs > paper/scripts/contrasts.txt
+    python paper/scripts/bootstrap.py runs > paper/scripts/contrasts.txt
 """
 import gzip
 import json

@@ -12,13 +12,13 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 's1bio_hpc'))
+sys.path.insert(0, str(ROOT))
 from s1.split_integrity import fingerprint, input_key, state_key
 
 
 def main():
-    source = ROOT / 's1bio_hpc/prepared'
-    dest = ROOT / 's1bio_hpc/prepared_clean'
+    source = ROOT / 'prepared'
+    dest = ROOT / 'prepared_clean'
     dest.mkdir(exist_ok=True)
     def records(path):
         with path.open(encoding='utf-8') as stream:

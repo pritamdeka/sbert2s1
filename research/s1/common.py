@@ -64,9 +64,8 @@ def seed_everything(seed):
 
 
 def apply_vram_cap():
-    """Hard-cap this process's GPU memory at the budget the packer admitted it with (S1_VRAM_GB).
-    Several runs share one GPU; without a cap one greedy process (an LLM with long prompts) can take
-    the whole device and crash its neighbours. With it, only the over-budget process fails."""
+    """Optionally cap this process's GPU memory at S1_VRAM_GB gigabytes (unset: no cap). Useful when
+    several runs share one GPU, so that one greedy process cannot take the whole device."""
     import torch
     gb = os.environ.get('S1_VRAM_GB')
     if not gb or not torch.cuda.is_available():

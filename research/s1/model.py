@@ -26,7 +26,7 @@ def load_encoder(path, revision=None):
     kw = dict(revision=revision) if revision else {}
     cfg = AutoConfig.from_pretrained(path, **kw)
     if hasattr(cfg, 'reference_compile'):
-        cfg.reference_compile = False                     # ModernBERT: no torch.compile on the ROCm stack
+        cfg.reference_compile = False                     # ModernBERT: skip torch.compile for portability
     for attn in ('sdpa', 'eager'):
         try:
             # Always fp32 master weights: transformers 5 otherwise keeps the checkpoint's stored dtype, and
@@ -174,7 +174,7 @@ def build_laya(laya_dir):
     from transformers import AutoConfig, AutoModel
     ecfg = AutoConfig.from_pretrained(str(Path(laya_dir) / 'encoder'))
     if hasattr(ecfg, 'reference_compile'):
-        ecfg.reference_compile = False                    # no torch.compile on the ROCm stack
+        ecfg.reference_compile = False                    # skip torch.compile for portability
     with torch.device('meta'):
         enc = AutoModel.from_config(ecfg, attn_implementation='sdpa')
         model = S1Model(enc, 'C', pooling='mean')

@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / 's1bio_hpc'))
+sys.path.insert(0, str(ROOT))
 from s1.temperature_lookup import temperature_for
 
 SEEN = ['pubmedqa','scifact','healthver','ddi','hoc','ade','druglib','medline_s1']

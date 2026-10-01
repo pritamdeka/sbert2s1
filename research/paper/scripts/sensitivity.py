@@ -1,5 +1,6 @@
 """Exact-input exclusion sensitivity using existing checkpoints and temperatures."""
 import json
+import sys
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -7,7 +8,7 @@ from analysis_common import ROOT, SEEN, predictions, macro_accuracy, audit
 
 
 def main():
-    root=ROOT/'results/s1_results_public/runs';output=[]
+    root=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'runs';output=[]
     selectors=[('S-PubMedBERT C','main/spubmedbert/C/s*'),('S-PubMedBERT PFR (PG)','main/spubmedbert/PFR/s*'),
                ('S-PubMedBERT PFR (CE)','rq3/ce/s*'),('S-PubMedBERT PFR (Reparam)','rq3/reparam/s*'),
                ('BioClinical-ModernBERT C','main/bcmb/C/s*'),('Laya-large FT','laya_ft/s*'),('Gemma-4-31B','llm/gemma4_31b')]

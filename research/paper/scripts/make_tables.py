@@ -3,7 +3,7 @@
     python paper/scripts/make_tables.py                       # data table only (manifests)
     python paper/scripts/make_tables.py --runs runs           # + result tables from metrics_final.json files
 
-Clinical counts come from prepared/manifest_clinical.json copied back from the cluster (counts only).
+Clinical counts come from prepared/manifest_clinical.json (counts only).
 Missing inputs produce tables whose cells read "--" and a \\tbd marker, never invented numbers.
 """
 import argparse
@@ -49,7 +49,7 @@ def data_table():
     """Single-column table, grouped by track (no track column) so that it fits \columnwidth."""
     man = {}
     for f in ('manifest.json', 'manifest_clinical.json'):
-        p = PROJECT / 's1bio_hpc' / 'prepared' / f
+        p = PROJECT / 'prepared' / f
         if p.exists():
             man.update(json.loads(p.read_text()))
     groups = {code: [] for code, _ in TRACK_NAMES}

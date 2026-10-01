@@ -1,6 +1,6 @@
 """Figures for the paper from metrics_long.csv and saved logits (public tasks only).
 
-    python paper/scripts/figures.py results/s1_results_public/runs
+    python paper/scripts/figures.py runs
 Writes paper/figures/learning_curves.pdf and paper/figures/cascade.pdf.
 """
 import gzip

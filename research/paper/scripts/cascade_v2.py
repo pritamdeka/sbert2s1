@@ -50,4 +50,4 @@ def cascade(root):
     print(df[df.budget==20].groupby(['model','filtered']).score.agg(['mean','std']).to_string())
 
 
-if __name__=='__main__':cascade(ROOT/'results/s1_results_public/runs')
+if __name__=='__main__':cascade(ROOT/'runs')

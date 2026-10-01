@@ -1,4 +1,4 @@
-"""Latency / throughput benchmark (runs as an exclusive queue task: nothing else on the GPU).
+"""Latency / throughput benchmark (run it with nothing else on the GPU).
 
 For each architecture, batch-1 requests with N in {1, 5, 10} questions over one state from the
 test sets: p50/p95 latency and questions/s, on GPU (and CPU with --cpu). Untrained weights have the

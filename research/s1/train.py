@@ -40,7 +40,7 @@ DEFAULTS = dict(
     init_from=None, amp='bf16', ckpt_minutes=20, grad_probe_every=250, max_minutes=0,
     prepared=None, cache=None)
 
-# patch 8: optional keys such as w_score are read with cfg.get(...) and are deliberately NOT added to
+# Optional keys such as w_score are read with cfg.get(...) and are deliberately NOT added to
 # DEFAULTS, so the config hash of every existing run directory is unchanged.
 
 STOP = {'flag': False}
@@ -240,7 +240,7 @@ def main():
                             cuda_rng=torch.cuda.get_rng_state() if device.type == 'cuda' else None), tmp)
             os.replace(tmp, ckpt)
 
-        # Tests / smoke: simulate Slurm's TERM once, on the first attempt only, to exercise resume.
+        # Tests / smoke: simulate a scheduler's TERM signal once, on the first attempt only, to exercise resume.
         stop_at = -1 if resumed else int(os.environ.get('S1_TEST_STOP_AT', cfg.get('test_stop_at', -1)))
         while step < total:
             if step == stop_at:

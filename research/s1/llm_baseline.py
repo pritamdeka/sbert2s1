@@ -5,8 +5,8 @@ distribution = softmax over the next-token logits of the option letters (no samp
         --calib-tasks pubmedqa scifact ...
 
 Temperatures are fitted on the calibration slices exactly as for the encoders, so pre/post-TS metrics
-are comparable. Loading follows our Kelvin2 loader (ROCm, bf16, SDPA, HF offline). Credentialed
-(PhysioNet) splits are only ever processed locally on the cluster by this script.
+are comparable. Models are loaded in bf16 with SDPA attention. Credentialed (PhysioNet) splits must only
+be processed on infrastructure your data use agreement allows; never send them to a hosted API.
 """
 import argparse
 import json

@@ -1,10 +1,10 @@
-"""End-to-end CPU test on a tiny random encoder (no GPU, minutes). Run before every upload:
+"""End-to-end CPU test on a tiny random encoder (no GPU, minutes):
 
     python tests/test_cpu.py
 
 Covers: pre-tokenisation, all four architectures, all four objectives, frozen prior, calibration,
 evaluation (permutation probe, long-state strategies, retrieval retention), exact resume after a
-simulated SIGTERM, the queue/packer (dependencies, failure retry), and the LLM option scorer.
+simulated SIGTERM, and the LLM option scorer.
 """
 import gzip
 import json
@@ -158,26 +158,6 @@ def test_resume():
     check(p3.returncode != 0, 'changed config in an existing run dir is refused')
 
 
-def test_queue():
-    q = TMP / 'queue'
-    env = dict(os.environ, S1_QUEUE=str(q), S1_JOB_END=str(time.time() + 10 * 3600))
-    tasks = [dict(run_id='a', kind='cmd', priority=0, argv=['-c', 'import time; time.sleep(1)'], vram_gb=10, slots=1),
-             dict(run_id='b', kind='cmd', priority=1, argv=['-c', 'print("b")'], vram_gb=10, slots=1, after=['a']),
-             dict(run_id='c', kind='cmd', priority=0, argv=['-c', 'import sys; sys.exit(1)'], vram_gb=10, slots=1),
-             dict(run_id='d', kind='cmd', priority=0, argv=['-c', 'import sys; sys.exit(3)'], vram_gb=10, slots=1,
-                  after=['never'])]
-    code = f'from s1.queue import enqueue; import json; print(enqueue(json.loads({json.dumps(json.dumps(tasks))})))'
-    subprocess.run([sys.executable, '-c', code], cwd=ROOT, env=env, check=True)
-    p = subprocess.run([sys.executable, '-m', 's1.queue', 'pack', '--vram-gb', '25', '--max-slots', '2', '--cpus', '2'],
-                       cwd=ROOT, env=env, capture_output=True, text=True, timeout=300)
-    done = sorted(x.stem for x in (q / 'done').glob('*.json'))
-    failed = sorted(x.stem for x in (q / 'failed').glob('*.json'))
-    pending = sorted(x.stem for x in (q / 'pending').glob('*.json'))
-    check(done == ['P0_a', 'P1_b'], f'dependency order respected: {done}\n{p.stdout}\n{p.stderr[-1500:]}')
-    check(failed == ['P0_c'], f'failing task retried once then failed: {failed}')
-    check(pending == ['P0_d'], 'task with unmet dependency left pending; packer exited cleanly')
-
-
 def test_llm_scorer():
     from transformers import AutoTokenizer, LlamaConfig, LlamaForCausalLM
     from s1 import llm_baseline as L
@@ -198,8 +178,8 @@ def test_llm_scorer():
 def main():
     make_tiny()
     make_prepared()
-    tests = [test_training, test_pfr_step0_equals_zeroshot, test_resume, test_queue, test_llm_scorer]
-    if len(sys.argv) > 1:                                   # python tests/test_cpu.py test_queue test_llm_scorer
+    tests = [test_training, test_pfr_step0_equals_zeroshot, test_resume, test_llm_scorer]
+    if len(sys.argv) > 1:                                   # python tests/test_cpu.py test_resume test_llm_scorer
         tests = [t for t in tests if t.__name__ in sys.argv[1:]]
     if test_pfr_step0_equals_zeroshot in tests and test_training not in tests:
         from s1.data import build_cache

@@ -1,4 +1,4 @@
-"""Matched gradient-estimator probe for RQ3 (patch 8). No training; one GPU for a few minutes.
+"""Matched gradient-estimator probe for RQ3. No training; one GPU for a few minutes.
 
 The training-log `grad_var` values compare estimators measured on DIFFERENT models at different steps and
 on different scales, so they cannot isolate estimator variance. This probe fixes all of that: for each

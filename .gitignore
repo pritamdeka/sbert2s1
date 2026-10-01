@@ -12,7 +12,8 @@ research/prepared_clean/
 research/cache/
 research/runs/
 research/logs/
-research/queue*/
+research/runs_smoke/
+research/exports/
 research/results/s1_results*/
 research/configs/models.lock.json
 *.pt

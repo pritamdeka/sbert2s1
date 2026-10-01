@@ -1,4 +1,4 @@
-"""Decision and calibration metrics (numpy only; no sklearn/scipy needed on the cluster).
+"""Decision and calibration metrics (numpy only; no sklearn/scipy needed).
 
 Input for one (task, question type) group: probs [N, K] (rows sum to 1 over the K active
 options), target [N, K] (one-hot or soft gold), qtype. Hard label = argmax(target).

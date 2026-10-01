@@ -1,4 +1,4 @@
-# Inference only. Tests pass with torch 2.14 + transformers 5.18; training used torch 2.8 (ROCm).
+# Inference only. Tests pass with torch 2.14 + transformers 5.18; training used torch 2.8.
 # Only AutoConfig / AutoModel / AutoTokenizer are used from transformers (no sentence-transformers).
 torch>=2.1
 transformers>=4.40
