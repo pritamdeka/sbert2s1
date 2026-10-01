@@ -187,7 +187,7 @@ $\lVert\nabla J_\sigma\rVert^2$ divided by the scale-matched variance of one est
 \end{table*}
 '''
     (TAB / 'probe.tex').write_text(tex, encoding='utf-8')
-    fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.0))
+    fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.35))
     sig = [0.4, 0.25, 0.1]
     good = [run for run in pj['runs'].values() if 'sigma' in run]
     for e, lab in EST:
@@ -205,15 +205,16 @@ $\lVert\nabla J_\sigma\rVert^2$ divided by the scale-matched variance of one est
         ax.set_xlabel(r'noise $\sigma$ (training anneals left to right)')
         ax.set_ylabel(yl)
     axes[0].axhline(1, color='#888888', lw=0.8, ls=':')
-    axes[0].legend(fontsize=6.3, frameon=False, loc='upper left')
-    fig.tight_layout(pad=0.4)
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc='lower center', ncol=len(labels), fontsize=6.5, frameon=False)
+    fig.tight_layout(pad=0.4, rect=(0, 0.09, 1, 1))
     fig.savefig(FIG / 'probe.pdf')
     plt.close(fig)
 
 
 def gradnorm_figure(df, runs_dir):
     cells = head_obj_runs(df)
-    fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.0), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.35), sharey=True)
     for ax, head in zip(axes, ('PFR', 'C')):
         for name, obj, wce in OBJ:
             if wce == 0.0:
@@ -229,8 +230,14 @@ def gradnorm_figure(df, runs_dir):
         ax.set_title('PFR head' if head == 'PFR' else 'C head', fontsize=7.5)
         ax.set_xlabel('training step')
     axes[0].set_ylabel('global gradient norm (pre-clip)')
-    axes[1].legend(fontsize=6.3, frameon=False, ncol=2, loc='upper left')
-    fig.tight_layout(pad=0.4)
+    seen_labels, handles = {}, []
+    for ax in axes:
+        for h, l in zip(*ax.get_legend_handles_labels()):
+            if l not in seen_labels:
+                seen_labels[l] = h
+    fig.legend(list(seen_labels.values()), list(seen_labels), loc='lower center', ncol=len(seen_labels),
+               fontsize=6.5, frameon=False)
+    fig.tight_layout(pad=0.4, rect=(0, 0.09, 1, 1))
     fig.savefig(FIG / 'gradnorm.pdf')
     plt.close(fig)
 
@@ -242,8 +249,9 @@ def reliability_figure(runs_dir):
     models = [('S-PubMedBERT C, CE', 'rq3c/ce/s*'), ('S-PubMedBERT C, PG', 'main/spubmedbert/C/s*'),
               ('S-PubMedBERT PFR, CE', 'rq3/ce/s*'), ('Gemma-4-31B, zero-shot', 'llm/gemma4_31b')]
     bins = np.linspace(0, 1, 11)
-    fig, axes = plt.subplots(1, 4, figsize=(6.6, 1.95), sharey=True)
+    fig, axes = plt.subplots(1, 4, figsize=(6.6, 2.3), sharey=True)
     for ax, (name, pat) in zip(axes, models):
+        eces = {}
         conf_raw, conf_ts, corr = [], [], []
         for run in sorted(runs_dir.glob(pat)):
             tp = json.loads((run / 'temps.json').read_text()) if (run / 'temps.json').exists() else {}
@@ -267,16 +275,18 @@ def reliability_figure(runs_dir):
             keep = [b for b in range(10) if (idx == b).sum() >= 30]
             ece = sum((idx == b).mean() * abs(conf[idx == b].mean() - corr[idx == b].mean())
                       for b in range(10) if (idx == b).any())
+            eces[lab] = ece
             ax.plot([conf[idx == b].mean() for b in keep], [corr[idx == b].mean() for b in keep], ms=3, lw=1,
-                    label=f'{lab} (pooled ECE {ece * 100:.1f})', **style)
+                    label={'raw': 'raw confidence', 'scaled': 'temperature-scaled'}[lab], **style)
         ax.plot([0, 1], [0, 1], color='#888888', lw=0.7, ls=':')
-        ax.set_title(name, fontsize=6.8)
+        ax.set_title(f"{name}\nECE {eces['raw'] * 100:.1f} raw, {eces['scaled'] * 100:.1f} scaled", fontsize=6.6)
         ax.set_xlabel('confidence')
-        ax.legend(fontsize=5.5, frameon=False, loc='upper left')
         ax.set_xlim(0.2, 1.0)
         ax.set_ylim(0.2, 1.0)
     axes[0].set_ylabel('accuracy')
-    fig.tight_layout(pad=0.35)
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc='lower center', ncol=2, fontsize=6.5, frameon=False)
+    fig.tight_layout(pad=0.35, rect=(0, 0.08, 1, 1))
     fig.savefig(FIG / 'reliability.pdf')
     plt.close(fig)
 

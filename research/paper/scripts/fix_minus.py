@@ -21,8 +21,8 @@ def fix(path):
 
 
 # Appendix tables that may go on float pages (keeps the layout of the preprint formatting pass).
-PLACEMENT = {name: 'tp' for name in ('contrasts', 'contrasts_rq1', 'main_full', 'objectives_full', 'per_task',
-                                     'probe', 'robustness')}
+PLACEMENT = {'contrasts': 'tp', 'contrasts_rq1': 'tp', 'main_full': 't', 'objectives_full': 't', 'per_task': 't',
+             'probe': 't', 'robustness': 'tbp'}
 
 
 def place(tab):
@@ -30,7 +30,11 @@ def place(tab):
         f = tab / f'{name}.tex'
         if f.exists():
             s = f.read_text(encoding='utf-8')
-            t = s.replace('\\begin{table*}[t]', '\\begin{table*}[' + spec + ']', 1)
+            t = s
+            for old in ('[tp]', '[tbp]', '[t]'):
+                if s.startswith('\\begin{table*}' + old):
+                    t = s.replace('\\begin{table*}' + old, '\\begin{table*}[' + spec + ']', 1)
+                    break
             if t != s:
                 f.write_text(t, encoding='utf-8')
 
