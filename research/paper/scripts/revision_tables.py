@@ -372,7 +372,7 @@ Contrast ($a - b$) & Seeds & Seen $\Delta$ [95\% CI] & $p_{\text{Holm}}$ & Held-
               f"The smallest attainable unadjusted $p$ is {2 / (data['draws'] + 1):.4f}.")
     (TAB / 'contrasts_rq1.tex').write_text(table({'RQ1'}, 'tab:contrasts_rq1',
         'Initialisation contrasts (contrastive child minus MLM parent) for every available pair, head and training-data '
-        'fraction. ' + common + ' Rows with 1/1 seeds do not measure training-seed variability.'), encoding='utf-8')
+        'fraction. ' + common), encoding='utf-8')
     (TAB / 'contrasts.tex').write_text(table({'RQ2', 'RQ3', 'LLM'}, 'tab:contrasts',
         'Conversion (RQ2), objective (RQ3) and baseline contrasts on S-PubMedBERT-MS-MARCO. ' + common), encoding='utf-8')
 

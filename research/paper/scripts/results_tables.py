@@ -106,7 +106,7 @@ Encoder & Type & C & \pfr{{}} & C, 10\% & C & \pfr{{}} & C & C \\
 {body}
 \bottomrule
 \end{{tabular}}
-\caption{{Main results ($\times100$; mean$\pm$sd over 3 seeds; 10\% uses 3 seeds for the original five checkpoints and 1 for extensions). Encoders are grouped by
+\caption{{Main results ($\times100$; mean$\pm$sd over 3 seeds; 10\% also uses 3 seeds). Encoders are grouped by
 matched pair (MLM parent, then contrastive children). acc$_{{\text{{cn}}}}$: chance-normalised accuracy,
 averaged over question groups within a task and then over tasks. Seen: the 8 grounded training tasks.
 Held-out: PUBHEALTH, BIOSSES, MTSamples. Clinical: MedNLI, MIMIC-III trial questions and MIMIC-IV name
