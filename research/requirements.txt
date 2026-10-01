@@ -1,0 +1,9 @@
+# research code (training, evaluation, data builders, analysis); the pip package needs only the first four
+torch>=2.1
+transformers>=4.48     # ModernBERT encoders need >= 4.48
+safetensors>=0.4
+huggingface_hub>=0.23
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+lxml>=4.9              # MEDLINE XML

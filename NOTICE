@@ -1,0 +1,15 @@
+sbert2s1
+Copyright 2026 Pritam Deka
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It contains an independent re-implementation of the mask-slot decision head of Laya
+(Convai Innovations, https://github.com/NandhaKishorM/Laya), which is distributed under the
+Apache License, Version 2.0, so that Laya checkpoints and sbert2s1 cross-head models share one
+layout. The typed-decision request schema (choice / score / noul) follows the public Jev/Laya
+specification.
+
+Model weights are NOT covered by this licence. The released model pritamdeka/S1-PubMedBERT is
+derived from pritamdeka/S-PubMedBert-MS-MARCO and inherits its CC BY-NC 2.0 licence
+(non-commercial use). Datasets are not redistributed; each builder in research/data_build
+downloads the original data, which remain under their own licences and terms of use.

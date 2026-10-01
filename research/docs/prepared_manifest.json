@@ -1,0 +1,548 @@
+{
+ "ade/calib": {
+  "decisions": 400,
+  "labels": {
+   "false": 312,
+   "true": 88
+  },
+  "sha256": "526efeae2f3bd7eb2c032edc74bb9788c693015b9b0723faa9cd7e906b34647d",
+  "states": 400
+ },
+ "ade/dev": {
+  "decisions": 2089,
+  "labels": {
+   "false": 1650,
+   "true": 439
+  },
+  "sha256": "1aea5e9bdbe3f1d99f3f0bdb030339782515ef6875d07bd34373e601e97b3087",
+  "states": 2089
+ },
+ "ade/test": {
+  "decisions": 2089,
+  "labels": {
+   "false": 1681,
+   "true": 408
+  },
+  "sha256": "f9306ef0965fad634da6cd5153cea0b37bb615bc23579c27662ad8a77cf308e2",
+  "states": 2089
+ },
+ "ade/train": {
+  "decisions": 16318,
+  "labels": {
+   "false": 12982,
+   "true": 3336
+  },
+  "sha256": "b43d53f5501650b0f4e0706ffcd3340dbdae801ce2e966abaf7d45ac7c7c2651",
+  "states": 16318
+ },
+ "biosses/test": {
+  "decisions": 100,
+  "labels": {
+   "0": 14,
+   "1": 12,
+   "2": 28,
+   "3": 35,
+   "4": 11
+  },
+  "sha256": "57dc20f7dacd331dc8311f0a52f1d7f5f95740aadbe3205a2b176d3311f5bec1",
+  "states": 100
+ },
+ "ddi/calib": {
+  "decisions": 400,
+  "labels": {
+   "advice": 16,
+   "effect": 24,
+   "mechanism": 18,
+   "none": 342
+  },
+  "sha256": "5341d846c568ee6130259b3af4ffd131c73c41feb101e5fa5ec10aebd133cd50",
+  "states": 400
+ },
+ "ddi/test": {
+  "decisions": 7039,
+  "labels": {
+   "advice": 187,
+   "effect": 371,
+   "int": 42,
+   "mechanism": 366,
+   "none": 6073
+  },
+  "sha256": "9b69a7e0101a7d1e699174947adaa42b47955b038b7e4b289a43126770a81b71",
+  "states": 7039
+ },
+ "ddi/train": {
+  "decisions": 18379,
+  "labels": {
+   "advice": 617,
+   "effect": 1188,
+   "int": 146,
+   "mechanism": 928,
+   "none": 15500
+  },
+  "sha256": "c935ff6e5a070fa366d310c7b10292f9e552f3c5fcb3c49e8e923901e5b9a1a2",
+  "states": 18379
+ },
+ "druglib/calib": {
+  "decisions": 930,
+  "labels": {
+   "0": 145,
+   "1": 141,
+   "2": 132,
+   "3": 244,
+   "4": 268
+  },
+  "sha256": "f62f7c86e65a2e31d2f3d634afd14c42289f45e052fde87cfd2b0db58c8336ed",
+  "states": 310
+ },
+ "druglib/test": {
+  "decisions": 3108,
+  "labels": {
+   "0": 498,
+   "1": 499,
+   "2": 518,
+   "3": 743,
+   "4": 850
+  },
+  "sha256": "df268d595c147bb94be1aae805550ad595dc9303b481bc71728b6ee5a52c0182",
+  "states": 1036
+ },
+ "druglib/train": {
+  "decisions": 8391,
+  "labels": {
+   "0": 1440,
+   "1": 1318,
+   "2": 1213,
+   "3": 1961,
+   "4": 2459
+  },
+  "sha256": "f2853271f6006f49cb3b1105db7dd279542d3cd6effcdc318ec1f791c90d3293",
+  "states": 2797
+ },
+ "healthver/calib": {
+  "decisions": 517,
+  "labels": {
+   "not_enough_info": 183,
+   "refutes": 141,
+   "supports": 193
+  },
+  "sha256": "90a5e561729111ae2725da6e587ee19b12a2e815d70785f1e4cccce03e94659c",
+  "states": 517
+ },
+ "healthver/dev": {
+  "decisions": 1917,
+  "labels": {
+   "not_enough_info": 993,
+   "refutes": 391,
+   "supports": 533
+  },
+  "sha256": "c5b5d53a52e878a3f2491cbc52945c8590b16ed15c3cfef3409655973b2934ee",
+  "states": 1917
+ },
+ "healthver/test": {
+  "decisions": 1823,
+  "labels": {
+   "not_enough_info": 727,
+   "refutes": 425,
+   "supports": 671
+  },
+  "sha256": "da0f155e3eb88c6b9512c371de2b8c541b61ada0c5aa8bbff267d9798596a9a8",
+  "states": 1823
+ },
+ "healthver/train": {
+  "decisions": 10073,
+  "labels": {
+   "not_enough_info": 4214,
+   "refutes": 2270,
+   "supports": 3589
+  },
+  "sha256": "d712a3a2603c533e133990723d1454c2cac87fa62f2241524a5de5ff39d444c1",
+  "states": 10073
+ },
+ "hoc/calib": {
+  "decisions": 1290,
+  "labels": {
+   "false": 1135,
+   "true": 155
+  },
+  "sha256": "0aec08085d98d00fc3c39364d14e7586c738a97283709aa6d684429732af1936",
+  "states": 129
+ },
+ "hoc/dev": {
+  "decisions": 1860,
+  "labels": {
+   "false": 1616,
+   "true": 244
+  },
+  "sha256": "a0bf7b939596b5a69dcc89162621a2e61048c17a6cff41cde9594812d5ff4239",
+  "states": 186
+ },
+ "hoc/test": {
+  "decisions": 3710,
+  "labels": {
+   "false": 3226,
+   "true": 484
+  },
+  "sha256": "d50694e4790b245ed7ddc4042e95c7eccc3607c7f69f6afe8fb495a3df1f6659",
+  "states": 371
+ },
+ "hoc/train": {
+  "decisions": 11660,
+  "labels": {
+   "false": 10077,
+   "true": 1583
+  },
+  "sha256": "94689e6669470404f858891010229d02af53088476ed243ed6e9d27bd8d7bdee",
+  "states": 1166
+ },
+ "medline_s1/calib": {
+  "decisions": 2418,
+  "files": [
+   "pubmed26n0925.xml.gz",
+   "pubmed26n1064.xml.gz",
+   "pubmed26n0831.xml.gz",
+   "pubmed26n1008.xml.gz",
+   "pubmed26n0684.xml.gz",
+   "pubmed26n0980.xml.gz",
+   "pubmed26n0776.xml.gz",
+   "pubmed26n0908.xml.gz",
+   "pubmed26n1027.xml.gz",
+   "pubmed26n0603.xml.gz",
+   "pubmed26n1053.xml.gz",
+   "pubmed26n0543.xml.gz",
+   "pubmed26n0852.xml.gz",
+   "pubmed26n1047.xml.gz"
+  ],
+  "mesh_trees_year": 2025,
+  "questions": {
+   "adverse": 400,
+   "animals": 400,
+   "design": 156,
+   "disease_area": 86,
+   "drug_therapy": 400,
+   "group_adolescents": 85,
+   "group_adults": 81,
+   "group_children": 70,
+   "group_female": 81,
+   "group_infants": 101,
+   "group_male": 75,
+   "group_older_adults": 83,
+   "humans": 400
+  },
+  "sha256": "af22e53f5865397b4a19ca58184a81dc64e2e37b657f5702fa9860a138a67cae",
+  "states": 400
+ },
+ "medline_s1/dev": {
+  "decisions": 12138,
+  "files": [
+   "pubmed26n0925.xml.gz",
+   "pubmed26n1064.xml.gz",
+   "pubmed26n0831.xml.gz",
+   "pubmed26n1008.xml.gz",
+   "pubmed26n0684.xml.gz",
+   "pubmed26n0980.xml.gz",
+   "pubmed26n0776.xml.gz",
+   "pubmed26n0908.xml.gz",
+   "pubmed26n1027.xml.gz",
+   "pubmed26n0603.xml.gz",
+   "pubmed26n1053.xml.gz",
+   "pubmed26n0543.xml.gz",
+   "pubmed26n0852.xml.gz",
+   "pubmed26n1047.xml.gz"
+  ],
+  "mesh_trees_year": 2025,
+  "questions": {
+   "adverse": 2000,
+   "animals": 2000,
+   "design": 782,
+   "disease_area": 420,
+   "drug_therapy": 2000,
+   "group_adolescents": 433,
+   "group_adults": 412,
+   "group_children": 408,
+   "group_female": 418,
+   "group_infants": 414,
+   "group_male": 413,
+   "group_older_adults": 438,
+   "humans": 2000
+  },
+  "sha256": "01ab1d3e069beafb2896ee7e7a66e8fce1de439bd4873c27e1a0fc58091bf22c",
+  "states": 2000
+ },
+ "medline_s1/test": {
+  "decisions": 30522,
+  "files": [
+   "pubmed26n1131.xml.gz",
+   "pubmed26n0966.xml.gz",
+   "pubmed26n1004.xml.gz"
+  ],
+  "mesh_trees_year": 2025,
+  "questions": {
+   "adverse": 5000,
+   "animals": 5000,
+   "design": 2000,
+   "disease_area": 1050,
+   "drug_therapy": 5000,
+   "group_adolescents": 1124,
+   "group_adults": 1025,
+   "group_children": 1092,
+   "group_female": 1085,
+   "group_infants": 1049,
+   "group_male": 1054,
+   "group_older_adults": 1043,
+   "humans": 5000
+  },
+  "sha256": "e0e2e505ea1cbe5a33086515b6e3d7b7171205187c5f86b91a21eb2fd6986f55",
+  "states": 5000
+ },
+ "medline_s1/train": {
+  "decisions": 242986,
+  "files": [
+   "pubmed26n0925.xml.gz",
+   "pubmed26n1064.xml.gz",
+   "pubmed26n0831.xml.gz",
+   "pubmed26n1008.xml.gz",
+   "pubmed26n0684.xml.gz",
+   "pubmed26n0980.xml.gz",
+   "pubmed26n0776.xml.gz",
+   "pubmed26n0908.xml.gz",
+   "pubmed26n1027.xml.gz",
+   "pubmed26n0603.xml.gz",
+   "pubmed26n1053.xml.gz",
+   "pubmed26n0543.xml.gz",
+   "pubmed26n0852.xml.gz",
+   "pubmed26n1047.xml.gz"
+  ],
+  "mesh_trees_year": 2025,
+  "questions": {
+   "adverse": 40000,
+   "animals": 40000,
+   "design": 16105,
+   "disease_area": 8543,
+   "drug_therapy": 40000,
+   "group_adolescents": 8348,
+   "group_adults": 8323,
+   "group_children": 8261,
+   "group_female": 8280,
+   "group_infants": 8355,
+   "group_male": 8409,
+   "group_older_adults": 8362,
+   "humans": 40000
+  },
+  "sha256": "6a74e9e00e6bda8f7f2d39f21d43881b14312c598dd7476045faa43c20282979",
+  "states": 40000
+ },
+ "medmcqa/calib": {
+  "decisions": 400,
+  "labels": {
+   "A": 119,
+   "B": 113,
+   "C": 101,
+   "D": 67
+  },
+  "sha256": "56f5573ede5cde40592909e6567fa34186b6082b9fb77970d819be02b4f74853",
+  "states": 400
+ },
+ "medmcqa/test": {
+  "decisions": 2816,
+  "labels": {
+   "A": 950,
+   "B": 735,
+   "C": 617,
+   "D": 514
+  },
+  "sha256": "3232417a1e5833961b3fcac333b177b678940fc91d1404aac7520422337e9755",
+  "states": 2816
+ },
+ "medmcqa/train": {
+  "decisions": 20000,
+  "labels": {
+   "A": 6316,
+   "B": 5439,
+   "C": 4588,
+   "D": 3657
+  },
+  "sha256": "a38c8597cb29bc51c948761d8e2468ea22f05a92d4f9c0efc61036748e3a9fc8",
+  "states": 20000
+ },
+ "medqa/calib": {
+  "decisions": 400,
+  "labels": {
+   "A": 102,
+   "B": 110,
+   "C": 85,
+   "D": 103
+  },
+  "sha256": "4455b371e9fa3d3bc993b8d5f3956017e5aba166267c40fb7190dff69a64ba65",
+  "states": 400
+ },
+ "medqa/test": {
+  "decisions": 1273,
+  "labels": {
+   "A": 353,
+   "B": 309,
+   "C": 346,
+   "D": 265
+  },
+  "sha256": "2c7caa191c40bb26aa9b08b472e05f09704aaf40eebc40e71e3299c03003c8ae",
+  "states": 1273
+ },
+ "medqa/train": {
+  "decisions": 9778,
+  "labels": {
+   "A": 2482,
+   "B": 2544,
+   "C": 2472,
+   "D": 2280
+  },
+  "sha256": "76d4f9bee29f834e4a5963e05ada14d97408274d6d989dcf36e0fe8b9d88a65c",
+  "states": 9778
+ },
+ "mmlu_med/test": {
+  "decisions": 1089,
+  "labels": {
+   "A": 235,
+   "B": 254,
+   "C": 248,
+   "D": 352
+  },
+  "sha256": "c300d82d7a5c19aca5177fc7b7f0695002779c135f4532c90189a0099f94e707",
+  "states": 1089
+ },
+ "mtsamples/test": {
+  "decisions": 370,
+  "labels": {
+   "Cardiovascular / Pulmonary": 109,
+   "ENT - Otolaryngology": 14,
+   "Gastroenterology": 41,
+   "Hematology - Oncology": 15,
+   "Nephrology": 10,
+   "Neurology": 47,
+   "Neurosurgery": 20,
+   "Obstetrics / Gynecology": 32,
+   "Ophthalmology": 11,
+   "Orthopedic": 57,
+   "Pediatrics - Neonatal": 3,
+   "Psychiatry / Psychology": 9
+  },
+  "sha256": "7703e116293071498714e73662c5d7a1f97cad74f712d410619babac69fb40de",
+  "states": 370
+ },
+ "pubhealth/test": {
+  "decisions": 1231,
+  "labels": {
+   "false": 386,
+   "mixture": 201,
+   "true": 599,
+   "unproven": 45
+  },
+  "sha256": "b5a027f5de4ec721453a25e12b2487fc48a573c6fdef4e072b4b1757a1532655",
+  "states": 1231
+ },
+ "pubmedqa/calib": {
+  "decisions": 50,
+  "labels": {
+   "maybe": 6,
+   "no": 17,
+   "yes": 27
+  },
+  "sha256": "705e69d45c060b3261a8a87c32c753b6c1a7a02915cd32a055c390b0096b8123",
+  "states": 50
+ },
+ "pubmedqa/dev": {
+  "decisions": 50,
+  "labels": {
+   "maybe": 3,
+   "no": 19,
+   "yes": 28
+  },
+  "sha256": "cee2857ea330a12b5d4f1a3fd94b740baf3bca535cd0b2ca4e674e0c81f1a212",
+  "states": 50
+ },
+ "pubmedqa/test": {
+  "decisions": 500,
+  "labels": {
+   "maybe": 51,
+   "no": 161,
+   "yes": 288
+  },
+  "sha256": "d8fe691654a9301f1e48edf7282956a253309c38949e3ebb3f60b9ae84572a20",
+  "states": 500
+ },
+ "pubmedqa/train": {
+  "decisions": 400,
+  "labels": {
+   "maybe": 50,
+   "no": 141,
+   "yes": 209
+  },
+  "sha256": "fcdf904cd57fd7936bb38b78f4e4a609f25d70260efb2545e5671b5d60afd769",
+  "states": 400
+ },
+ "pubmedqa_art/calib": {
+  "decisions": 400,
+  "labels": {
+   "false": 23,
+   "true": 377
+  },
+  "sha256": "248c51c5ac80b4c618f9b147f7061dbee633792874bde2bf531d5555081123cb",
+  "states": 400
+ },
+ "pubmedqa_art/train": {
+  "decisions": 20000,
+  "labels": {
+   "false": 1386,
+   "true": 18614
+  },
+  "sha256": "c101679e0e9eb46560e7be91fa050dfa14afad90b358bb34d0e692478a3bffb5",
+  "states": 20000
+ },
+ "scifact/calib": {
+  "decisions": 88,
+  "labels": {
+   "not_enough_info": 38,
+   "refutes": 25,
+   "supports": 25
+  },
+  "sha256": "c48d84d031a3c6d79012585ceac130332834786b699474c8c6b23665442b0c3c",
+  "states": 88
+ },
+ "scifact/test": {
+  "decisions": 321,
+  "labels": {
+   "not_enough_info": 112,
+   "refutes": 71,
+   "supports": 138
+  },
+  "sha256": "c9fb77b4393816de3aa9d43994def812f29c0cb0fb428abf1463bf23c441f24a",
+  "states": 321
+ },
+ "scifact/train": {
+  "decisions": 780,
+  "labels": {
+   "not_enough_info": 266,
+   "refutes": 169,
+   "supports": 345
+  },
+  "sha256": "4fc8ce5aa064f8cf9250d888949cff95b07e71ef07248643e39790bffc87acf8",
+  "states": 780
+ },
+ "typed_decisions/test": {
+  "decisions": 2000,
+  "labels": {
+   "0": 125,
+   "1": 164,
+   "2": 253,
+   "3": 248,
+   "approve": 45,
+   "escalate_to_human": 51,
+   "false": 304,
+   "human_review": 37,
+   "investigate": 74,
+   "manual_review": 38,
+   "success": 48,
+   "true": 296
+  },
+  "sha256": "ed62cae917dfaf0be27a5fbfe1d84964790d184d2a4ccb79b3cc3f6a9e33a2b9",
+  "states": 400
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "pubmedbert":  {"model_id": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext", "revision": "main", "pooling": "mean", "tok_family": "pubmedbert", "pair": "bio_pubmedbert", "role": "mlm"},
+ "spubmedbert": {"model_id": "pritamdeka/S-PubMedBert-MS-MARCO", "revision": "main", "pooling": "mean", "tok_family": "pubmedbert", "pair": "bio_pubmedbert", "role": "contrastive"},
+ "medcpt_q":    {"model_id": "ncbi/MedCPT-Query-Encoder", "revision": "main", "pooling": "cls", "tok_family": "pubmedbert", "pair": "bio_pubmedbert", "role": "contrastive"},
+ "mpnet":       {"model_id": "microsoft/mpnet-base", "revision": "main", "pooling": "mean", "tok_family": "mpnet", "pair": "gen_mpnet", "role": "mlm"},
+ "allmpnet":    {"model_id": "sentence-transformers/all-mpnet-base-v2", "revision": "main", "pooling": "mean", "tok_family": "mpnet", "pair": "gen_mpnet", "role": "contrastive"},
+ "modernbert":  {"model_id": "answerdotai/ModernBERT-base", "revision": "main", "pooling": "mean", "tok_family": "modernbert", "pair": "gen_modernbert", "role": "mlm"},
+ "mbembed":     {"model_id": "nomic-ai/modernbert-embed-base", "revision": "main", "pooling": "mean", "tok_family": "modernbert", "pair": "gen_modernbert", "role": "contrastive",
+                 "query_prefix": "search_query: ", "doc_prefix": "search_document: "},
+ "gtemb":       {"model_id": "Alibaba-NLP/gte-modernbert-base", "revision": "main", "pooling": "cls", "tok_family": "modernbert", "pair": "gen_modernbert", "role": "contrastive"},
+ "bcmb":        {"model_id": "thomas-sounack/BioClinical-ModernBERT-base", "revision": "main", "pooling": "mean", "tok_family": "modernbert", "pair": "bio_bcmb", "role": "mlm"},
+ "bcmbembed":   {"model_id": "NeuML/bioclinical-modernbert-base-embeddings", "revision": "main", "pooling": "mean", "tok_family": "modernbert", "pair": "bio_bcmb", "role": "contrastive"},
+ "bge":         {"model_id": "BAAI/bge-base-en-v1.5", "revision": "main", "pooling": "cls", "tok_family": "bert_uncased", "pair": null, "role": "contrastive",
+                 "query_prefix": "Represent this sentence for searching relevant passages: "},
+ "laya":        {"model_id": "convaiinnovations/laya", "revision": "main", "laya": true, "tok_family": "laya_en", "tokenizer_subfolder": "tokenizer",
+                 "allow_patterns": ["rl_agent_config.json", "model.safetensors", "encoder/*", "tokenizer/*"]},
+ "qwen38_27b":  {"model_id": "Qwen/Qwen3.8-27B", "revision": "main", "kind": "llm"},
+ "gemma4_31b":  {"model_id": "google/gemma-4-31B-it", "revision": "main", "kind": "llm"}
+}
