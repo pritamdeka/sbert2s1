@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use sbert2s1, BioDecide or MEDLINE-S1, please cite the paper."
+title: "sbert2s1: calibrated System One decision models from biomedical sentence encoders"
+type: software
+authors:
+  - family-names: Deka
+    given-names: Pritam
+    affiliation: "Queen's University Belfast"
+license: Apache-2.0
+repository-code: "https://github.com/pritamdeka/sbert2s1"
+version: 0.1.0
+date-released: 2026-10-01
+keywords: [biomedical NLP, sentence encoders, typed decisions, calibration, System One]
+preferred-citation:
+  type: article
+  title: "From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders"
+  authors:
+    - family-names: Deka
+      given-names: Pritam
+      affiliation: "Queen's University Belfast"
+  year: 2026
+  notes: "Preprint"

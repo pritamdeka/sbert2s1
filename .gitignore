@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+# research outputs and data are never committed
+research/prepared/
+research/prepared_clean/
+research/cache/
+research/runs/
+research/logs/
+research/queue*/
+research/results/s1_results*/
+research/configs/models.lock.json
+*.pt
+*.safetensors
+*.tgz
+*.zip
+# credentialed data must never enter this repository
+**/physionet*/
+**/mimic*/
+**/mednli*/
