@@ -33,13 +33,20 @@ Several questions about the same text can be asked in one call; outputs cannot v
 ## Usage
 
 ```bash
-pip install sbert2s1            # https://github.com/pritamdeka/sbert2s1 (Apache-2.0); needs PyTorch
+pip install torch transformers safetensors huggingface_hub
 ```
 
 ```python
-from sbert2s1 import load
+import importlib.util
+from huggingface_hub import hf_hub_download
 
-model = load("pritamdeka/S1-PubMedBERT")        # GPU if available, otherwise CPU
+# the inference code ships with the model (read it first: about 300 lines of plain PyTorch)
+path = hf_hub_download("pritamdeka/S1-PubMedBERT", "sbert2s1.py")
+spec = importlib.util.spec_from_file_location("sbert2s1", path)
+sbert2s1 = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(sbert2s1)
+
+model = sbert2s1.load("pritamdeka/S1-PubMedBERT")        # GPU if available, otherwise CPU
 
 abstract = ("In this double-blind trial, 4,012 adults with atrial fibrillation were randomised to drug X "
             "or placebo. Drug X reduced stroke by 29% (HR 0.71, 95% CI 0.60-0.84); major bleeding was "
@@ -70,20 +77,6 @@ Output format (illustrative placeholders, not real predictions):
   "evidence": {"type": "score", "score": <expected level 0..3>, "answer_confidence": <p_max>,
                "probabilities": {"0": <p>, "1": <p>, "2": <p>, "3": <p>}}}}
 ```
-
-**Without the package.** The repository also contains `sbert2s1.py`, a single-file copy of the
-inference code (about 300 lines of plain PyTorch):
-
-```python
-import importlib.util
-from huggingface_hub import hf_hub_download
-path = hf_hub_download("pritamdeka/S1-PubMedBERT", "sbert2s1.py")
-spec = importlib.util.spec_from_file_location("sbert2s1", path)
-sbert2s1 = importlib.util.module_from_spec(spec); spec.loader.exec_module(sbert2s1)
-model = sbert2s1.load("pritamdeka/S1-PubMedBERT")
-```
-
-**Command line.** `sbert2s1 --model pritamdeka/S1-PubMedBERT --input requests.jsonl --output answers.jsonl`
 
 **Batches.** `model.predict_batch([(text1, questions1), (text2, questions2), ...], batch_size=32)`.
 **Raw logits.** `model.logits([...])` returns the unscaled logits per question.
@@ -157,7 +150,7 @@ groups within a task; ECE after temperature scaling (15 bins). Test splits; x100
   title  = {From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders},
   author = {Deka, Pritam},
   year   = {2026},
-  note   = {Preprint}
+  note   = {TODO: add arXiv identifier}
 }
 @article{deka2022improved,
   title   = {Improved Methods To Aid Unsupervised Evidence-Based Fact Checking For Online Health News},

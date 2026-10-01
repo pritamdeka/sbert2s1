@@ -8,9 +8,9 @@ here="$(cd "$(dirname "$0")" && pwd)"
 for f in s1_config.json model.safetensors encoder/config.json tokenizer/tokenizer_config.json; do
   [ -e "$src/$f" ] || { echo "missing $src/$f (run s1.predict.export first)"; exit 2; }
 done
-# model card, a single-file copy of the pip package's inference code, and its requirements
+# model card, the single-file inference code (inference/sbert2s1.py) and its requirements
 cp "$here/README.md" "$here/requirements.txt" "$src/"
-cp "$here/../../src/sbert2s1/_inference.py" "$src/sbert2s1.py"
+cp "$here/../../inference/sbert2s1.py" "$src/sbert2s1.py"
 python - "$src" "$repo" "$vis" <<'PY'
 import json, sys
 from huggingface_hub import HfApi

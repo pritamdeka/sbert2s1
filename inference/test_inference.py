@@ -1,13 +1,18 @@
-"""CPU tests for the pip package on a tiny randomly initialised export (no downloads)."""
+"""CPU tests for inference/sbert2s1.py on a tiny randomly initialised export (no downloads).
+
+    pip install pytest && pytest inference/
+"""
 import json
 import math
 
 import pytest
 import torch
 
-import sbert2s1
-from sbert2s1 import S1Model, load, option_keys, render_options
-from sbert2s1.cli import main as cli_main
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sbert2s1 import S1Model, load, option_keys, render_options  # noqa: E402
 
 WORDS = ("the a of and to in was were is with for patients trial randomised study cohort case report drug "
          "placebo effect reduced risk design what question choice score noul level true false yes no "
@@ -96,17 +101,3 @@ def test_rendering():
     assert option_keys(REQ["quality"]) == ["0", "1", "2", "3"]
     assert render_options(REQ["design"])[0] == "rct: randomised trial"
     assert render_options(REQ["effect"])[1].startswith("true: ")
-
-
-def test_cli(tmp_path, capsys):
-    exp = _export(tmp_path / "m", "C") if (tmp_path / "m").mkdir() is None else None
-    src = tmp_path / "in.jsonl"
-    src.write_text(json.dumps({"id": "r1", "state": STATE, "questions": REQ}) + "\n")
-    dst = tmp_path / "out.jsonl"
-    assert cli_main(["--model", str(exp), "--input", str(src), "--output", str(dst), "--device", "cpu"]) == 0
-    row = json.loads(dst.read_text())
-    assert row["id"] == "r1" and set(row["answers"]) == set(REQ)
-
-
-def test_version():
-    assert sbert2s1.__version__.count(".") == 2

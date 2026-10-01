@@ -9,22 +9,26 @@ example to accept confident answers automatically and escalate the rest to a per
 
 This repository contains
 
-* the **pip package** (`pip install sbert2s1`): inference for exported models, with a Python API and
-  a command-line tool;
-* the **research code** (`research/`) used for the paper: the four conversions (Z, B, C, PFR),
-  the training objectives (CE, proper scores, RLCD and an unbiased leave-one-out variant), temperature
+* **`inference/`**: a single file of plain PyTorch (`sbert2s1.py`, about 300 lines) that loads an
+  exported model from a local folder or the Hugging Face Hub and answers requests. The same file ships
+  with the released model.
+* **`research/`**: the code used for the paper. It covers the four conversions (Z, B, C, PFR), the
+  training objectives (CE, proper scores, RLCD and an unbiased leave-one-out variant), temperature
   fitting, the BioDecide and MEDLINE-S1 data builders, the SLURM campaign scripts, and the analysis
-  and table/figure scripts.
+  and table and figure scripts.
 
 The released model is [`pritamdeka/S1-PubMedBERT`](https://huggingface.co/pritamdeka/S1-PubMedBERT).
 
-## Install
+## Quick start
 
 ```bash
-pip install sbert2s1            # needs PyTorch; for CPU-only machines install torch from the CPU index first
+git clone https://github.com/pritamdeka/sbert2s1.git && cd sbert2s1
+pip install -r inference/requirements.txt       # torch, transformers, safetensors, huggingface_hub
+python inference/example.py
 ```
 
-## Quick start
+In your own code, copy `inference/sbert2s1.py` next to your script, or download it from the model
+repository, then:
 
 ```python
 from sbert2s1 import load
@@ -54,13 +58,7 @@ result["answers"]["evidence"]    # {"type": "score", "score": expected level, "p
 * The state can be a string or any JSON-serialisable record.
 * The model reads at most 512 tokens (question block first). Longer texts are truncated and the answer
   is marked `"truncated": true`.
-
-### Command line
-
-```bash
-# requests.jsonl: one {"id": ..., "state": ..., "questions": {...}} per line
-sbert2s1 --model pritamdeka/S1-PubMedBERT --input requests.jsonl --output answers.jsonl
-```
+* `pytest inference/` runs CPU tests on a tiny random model (no downloads).
 
 ### Request schema
 

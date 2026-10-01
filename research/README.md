@@ -3,7 +3,7 @@
 This folder holds the code behind the paper *From Retrieval to Typed Decisions: Calibrated System One
 Models from Biomedical Sentence Encoders*. It is the code that ran the experiments, unchanged apart from
 removing cluster-specific paths. Run everything from this folder; the `s1` package is imported from here
-(`PYTHONPATH=.`). It is separate from the pip package and is not installed by it.
+(`PYTHONPATH=.`). For inference alone, `../inference/sbert2s1.py` is enough.
 
 | Path | Content |
 |---|---|
@@ -101,7 +101,7 @@ columns. The bootstrap results are in `results/contrasts.json`.
 python -c "from s1.predict import export; export('runs/example', 'exports/my-model', laya=True)"
 ```
 
-This command writes the layout that the pip package loads (`s1_config.json`, `model.safetensors`,
+This command writes the layout that `inference/sbert2s1.py` loads (`s1_config.json`, `model.safetensors`,
 `encoder/` and `tokenizer/`), with fitted temperatures, plus a Laya-compatible copy in `laya/`.
-`sbert2s1.load('exports/my-model')` then works offline. `model_card/` holds the published card and
+`load("exports/my-model")` from `inference/sbert2s1.py` then works offline. `model_card/` holds the published card and
 the upload script, which refuses to upload a model whose training tasks include clinical data.
