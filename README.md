@@ -128,10 +128,13 @@ The model is not a medical device. It is not validated for clinical decisions.
 ## Citation
 
 ```bibtex
-@misc{deka2026sbert2s1,
-  title  = {From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders},
-  author = {Deka, Pritam},
-  year   = {2026},
-  note   = {Preprint}
+@misc{deka2026retrievaltypeddecisionscalibrated,
+      title={From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders}, 
+      author={Pritam Deka},
+      year={2026},
+      eprint={2610.02486},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2610.02486}, 
 }
 ```
