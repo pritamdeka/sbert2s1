@@ -152,9 +152,4 @@ groups within a task; ECE after temperature scaling (15 bins). Test splits; x100
   year   = {2026},
   note   = {TODO: add arXiv identifier}
 }
-@article{deka2022improved,
-  title   = {Improved Methods To Aid Unsupervised Evidence-Based Fact Checking For Online Health News},
-  author  = {Deka, Pritam and Jurek-Loughrey, Anna and Deepak, P.},
-  journal = {Journal of Data Intelligence}, volume = {3}, number = {4}, pages = {474--504}, year = {2022}
-}
 ```
