@@ -8,6 +8,8 @@ here="$(cd "$(dirname "$0")" && pwd)"
 for f in s1_config.json model.safetensors encoder/config.json tokenizer/tokenizer_config.json; do
   [ -e "$src/$f" ] || { echo "missing $src/$f (run s1.predict.export first)"; exit 2; }
 done
+# root config.json (a copy of s1_config.json): the Hub counts downloads by requests to this file
+[ -e "$src/config.json" ] || cp "$src/s1_config.json" "$src/config.json"
 # model card, the single-file inference code (inference/sbert2s1.py) and its requirements
 cp "$here/README.md" "$here/requirements.txt" "$src/"
 cp "$here/../../inference/sbert2s1.py" "$src/sbert2s1.py"

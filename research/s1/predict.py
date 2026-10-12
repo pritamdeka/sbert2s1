@@ -9,6 +9,7 @@ score -> {"score" (expected level), "probabilities"}, noul -> {"noul": P(true)}.
 The request schema is the public Laya/Jev one, so the same client code works against Laya, Jev and this.
 """
 import json
+import shutil
 import os
 from pathlib import Path
 
@@ -97,6 +98,9 @@ def export(run_dir, out_dir, laya=False):
         max_len=cfg['max_len'], head_max_len=cfg['head_max_len'], bi_state_len=cfg['bi_state_len'],
         temperatures=temps, base_model=spec['model_id'], base_revision=spec.get('revision'),
         objective=cfg['objective'], train_tasks=cfg['train_tasks'], seed=cfg['seed']), indent=1))
+    # The Hub counts downloads of models without a registered library by requests to a root config.json;
+    # an identical copy makes every load() count once (sbert2s1.load fetches all top-level *.json files).
+    shutil.copyfile(out / 's1_config.json', out / 'config.json')
     if laya:
         if cfg['arch'] != 'C' and not spec.get('laya'):
             raise ValueError('Laya layout exists only for the cross (C) architecture')
